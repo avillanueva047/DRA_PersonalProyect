@@ -1,0 +1,59 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+personal-proyect/tmp
+personal-proyect/out-tsc
+# Only exists if Bazel was run
+personal-proyect/bazel-out
+
+# dependencies
+personal-proyect/node_modules
+
+# profiling files
+personal-proyect/chrome-profiler-events*.json
+personal-proyect/speed-measure-plugin*.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+personal-proyect/.DS_Store
+personal-proyect/Thumbs.db
+
+# Laravel
+api-personal-project/node_modules
+api-personal-project/public/hot
+api-personal-project/public/storage
+api-personal-project/storage/*.key
+api-personal-project/vendor
+api-personal-project/.env
+api-personal-project/.env.backup
+api-personal-project/.phpunit.result.cache
+api-personal-project/Homestead.json
+api-personal-project/Homestead.yaml
+api-personal-project/npm-debug.log
+api-personal-project/yarn-error.log

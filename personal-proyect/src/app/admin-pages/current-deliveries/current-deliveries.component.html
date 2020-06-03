@@ -1,0 +1,28 @@
+<div id="wrapper">
+    <div class="selection">
+        <div class="worker-selector">
+            <div class="box">
+                <select class="selector" [(ngModel)]="this.worker" name="workers" id="workers" (change)="getDeliveries()">
+                    <option disabled selected>{{"Select worker"}}</option>
+                    <option *ngFor="let w of workers" [ngValue]="w">
+                        {{w.name}}
+                    </option>
+                </select>
+                <label class="label-selector" for="workers">Select Worker</label>
+            </div>
+        </div>
+        <div class="deliveries-list">
+            <div class="delivery" *ngFor="let d of deliveries" (click)="showMap(d)">
+                <p><fa-icon [icon]="faIdCard"></fa-icon> {{d.client_name}}</p>
+                <p><fa-icon [icon]="faBox"></fa-icon> {{d.client_email}}</p>
+                <p><fa-icon [icon]="faMapMarker"></fa-icon> {{d.client_direction}}</p>
+                <p><fa-icon [icon]="faPhone"></fa-icon> {{d.client_phone}}</p>
+            </div>
+        </div>
+    </div>
+    <div #map id="map" class="map">
+        <agm-map [latitude]="this.latitude" [longitude]="this.longitud" [zoom]="15">
+            <agm-marker [latitude]="this.latitude" [longitude]="this.longitud"></agm-marker>
+        </agm-map>
+    </div>
+</div>

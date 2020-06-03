@@ -1,0 +1,29 @@
+<video loop autoplay [muted]="'muted'" id="background">
+    <source src="./assets/background.mp4" type="video/mp4">
+</video>
+
+<div id="wrapper">
+    <div class="login">
+        <div>
+            <img id="logo" src="./assets/logo.png">
+        </div>
+        <form #form='ngForm' (ngSubmit)="login(form)" method="POST">
+            <div class="email">
+                <input ngModel name="email" id="email" class="email_input" placeholder="E-Mail" type="email" required>
+                <label for="email" class="email_label">E-Mail</label>
+            </div>
+            <div class="password">
+                <input ngModel name="password" id="password" class="password_input" placeholder="Password" type="password" required>
+                <label for="password" class="password_label">Password</label>
+            </div>
+            <div class="button-login">
+                <button class="button">Login</button>
+            </div>
+        </form>
+    </div>
+    <div class="register">
+        <div class="link">
+            <p>Dont have an account? <a class="register-link" (click)="registerPage()">Sign Up</a></p>
+        </div> 
+    </div>
+</div>

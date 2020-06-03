@@ -1,0 +1,126 @@
+#wrapper {
+    display: grid;
+    grid-template-columns: 40vw 40vw;
+    grid-template-rows: 95vh;
+}
+
+.selection {
+    display: grid;
+    grid-column: 1;
+    grid-template-rows: 10vh 85vh;
+}
+
+.map {
+    grid-column: 2;
+    position: relative;
+}
+
+.worker-selector{
+    grid-row: 1;
+}
+
+.box{
+    position: relative; 
+    height: 8vh;
+    padding-top: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    grid-row: 1;
+}
+
+.selector{
+    width: 100%;
+    height: 90%;
+    border: none;
+    outline: 0;
+    font-size: 2.1vh;
+    border-bottom: 3px solid gray;
+    padding-top: 20px;
+}
+
+.label-selector{
+    font-family: sans-serif;
+    transition: 0.2s;
+    position: absolute;
+    display: block;
+    top: 20px;
+    font-size: 1.6vh;
+    color: black;
+}
+
+.delivery{
+    width: 100%;
+    height: 10vh;
+    padding-top: 15px;
+    padding-bottom: 2px;
+    cursor: pointer;
+}
+
+.delivery:hover{
+    color: white;
+    background-color: black;
+}
+
+.deliveries-list{
+    overflow: auto;
+    grid-row: 2;
+}
+
+.deliveries-list::-webkit-scrollbar{
+    -webkit-appearance: none;
+}
+
+.deliveries-list::-webkit-scrollbar:vertical{
+    width: 10px;
+}
+
+.deliveries-list::-webkit-scrollbar-button:increment,.deliveries-list::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.deliveries-list::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.deliveries-list::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+p{
+    margin: 2px 0px;
+    padding-left: 20px;
+}
+
+agm-map{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: -1;
+}
+
+@media screen and (max-width: 700px){
+    #wrapper {
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 55vh 40vh;
+    }
+    .selection {
+        display: grid;
+        grid-row: 1;
+        grid-template-rows: 10vh 45vh;
+    }
+    .map {
+        grid-column: 1;
+        grid-row: 2;
+        height: 40vh;
+        width: 100vh;
+    }
+    agm-map{
+        height: 40vh;
+        width: 100vh;
+        position: relative;
+        z-index: -1;
+    }
+}

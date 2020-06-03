@@ -1,0 +1,136 @@
+#wrapper {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 5vh 95vh;
+}
+
+#header{
+    display: grid;
+    grid-template-columns: 33.3vw 33.3vw 33.3vw;
+    background-color: black;
+}
+
+#logo{
+    grid-column: 2;
+    height: 5vh;
+    text-align: center;
+}
+
+.image-logo{
+    height: 5vh;
+}
+
+#body{
+    display: grid;
+    grid-template-columns: 20vw 80vw;
+}
+
+/* Responsive menu */
+
+.menu{
+    background-color: rgba(0, 0, 0, 0.700);
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 10vh 10vh 10vh 55vh 10vh;
+}
+
+.left{
+    display: block;
+}
+
+.icon{
+    display: none;
+    padding-top: 9px;
+    padding-left: 15px;
+}
+
+.reveal_menu{
+    cursor: pointer;
+}
+
+.menu-icon{
+    color:  rgb(249, 225, 72);
+    font-size: 3vh;
+}
+
+@media screen and (max-width: 700px){
+    #body {
+        grid-template-columns: 0vw 100vw;
+    }
+
+    .menu {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.700);
+        transition: 0.3s;
+        width: 0;
+    }
+
+    .menu.reveal{
+        width: 100vw !important;
+        z-index: 100;
+    }
+
+    .icon{
+        display: block;
+    }
+}
+
+/* Menu Design */
+
+.content{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 10px;
+}
+
+.create{
+    grid-row: 1;
+}
+
+.current{
+    grid-row: 2;
+}
+
+.delivered{
+    grid-row: 3;
+}
+
+.logout{
+    grid-row: 5;
+    text-align: left;
+}
+.logout:hover{
+    background-color: rgb(219, 72, 72);
+}
+
+#option{
+    max-height: 10vh;
+    text-align: left;
+}
+
+#option:hover{
+    background-color:  rgb(249, 225, 72);
+}
+
+#option:hover p{
+    color: black;
+}
+
+p{
+    color: white;
+    font: 2.5vh sans-serif;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu-icon{
+    font-size: 2.5vh;
+}
+
+.panel{
+    grid-row: 2;
+}

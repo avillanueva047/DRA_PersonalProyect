@@ -1,0 +1,41 @@
+<div id="wrapper">
+    <div id="header" class="header">
+        <div class="left">
+            <div class="icon">
+                <a class="reveal_menu" (click)="reveal_menu()">
+                    <fa-icon class="menu-icon" [icon]="faBars"></fa-icon>
+                </a>
+            </div>
+        </div>
+        <div id="logo">
+            <img class="image-logo" src="./assets/logo.png">
+        </div>
+    </div>
+    <div id="body">
+        <div id="menu" class="menu">
+            <div id="option" class="pending">
+                <div class="content">
+                    <a (click)="show_pending()">
+                        <p><fa-icon [icon]="faTruck"></fa-icon> Pending Deliveries</p>
+                    </a>
+                </div>
+            </div>
+            <div id="option" class="delivered">
+                <div class="content">
+                    <a (click)="show_delivered()">
+                        <p><fa-icon [icon]="faBox"></fa-icon> Items Delivered</p>
+                    </a>
+                </div>
+            </div>
+            <div class="logout">
+                <div class="content">
+                    <a (click)="logOut()">
+                        <p><fa-icon [icon]="faSignOutAlt"></fa-icon> LogOut</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <app-pending-deliveries *ngIf="this.getRouter().url == '/user/pending'"></app-pending-deliveries>
+        <app-items-delivered *ngIf="this.getRouter().url == '/user/delivered'"></app-items-delivered>
+    </div>
+</div>

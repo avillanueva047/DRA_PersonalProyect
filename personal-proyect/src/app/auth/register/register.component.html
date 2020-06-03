@@ -1,0 +1,41 @@
+<video loop autoplay [muted]="'muted'" id="background">
+    <source src="./assets/background.mp4" type="video/mp4">
+</video>
+
+<div id="wrapper">
+    <div class="register">
+        <div>
+            <img id="logo" src="./assets/logo.png">
+        </div>
+        <form #form='ngForm' (ngSubmit)="register(form)" method="POST">
+            <div class="full_name">
+                <input ngModel name="fName" id="full_name" class="full_name_input" placeholder="Full Name" type="text" required>
+                <label for="full_name" class="full_name_label">Name</label>
+            </div>
+            <div class="full_name">
+                <input ngModel name="lName" id="last_name" class="full_name_input" placeholder="Last Name" type="text" required>
+                <label for="last_name" class="full_name_label">Last Name</label>
+            </div>
+            <div class="email">
+                <input ngModel name="email" id="email" class="email_input" placeholder="E-Mail" type="email" required>
+                <label for="email" class="email_label">E-Mail</label>
+            </div>
+            <div class="password">
+                <input ngModel name="password" id="password" class="password_input" placeholder="Password" type="password" pattern=".{6,12}" title="Password must have at least 6 characteres" required>
+                <label for="password" class="password_label">Password</label>
+            </div>
+            <div class="password">
+                <input ngModel name="confirm_password" id="confirm-password" class="password_input" placeholder="Confirm Password" pattern=".{6,12}" type="password" required>
+                <label for="confirm-password" class="password_label">Confirm Password</label>
+            </div>
+            <div class="button-register">
+                <button class="button">Register</button>
+            </div>
+        </form>
+    </div>
+    <div class="login">
+        <div class="link">
+            <p>Do you have an account already? <a class="login-link" (click)="loginPage()">Login</a></p>
+        </div>
+    </div>
+</div>

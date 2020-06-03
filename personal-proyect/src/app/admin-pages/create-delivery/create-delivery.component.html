@@ -1,0 +1,43 @@
+<div id="wrapper">
+    <div class="header">
+        <p class="title">Creating New Delivery</p>
+    </div>
+    <div class="create">
+        <div class="formulario">
+            <form #form='ngForm' (submit)="addDelivery(form)" method="POST">
+                <div class="box">
+                    <select class="selector" [(ngModel)]="this.worker" name="workers" id="workers">
+                        <option disabled selected>{{"Select worker"}}</option>
+                        <option *ngFor="let w of workers" [ngValue]="w">
+                            {{w.name}}
+                        </option>
+                    </select>
+                    <label class="label-selector" for="workers">Select Worker</label>
+                </div>
+                <div class="box">
+                    <input ngModel class="input" name="delivery_name" id="delivery_name" type="text" placeholder="Product Name" required>
+                    <label class="label" for="delivery_name">Delivery Name</label>
+                </div>
+                <div class="box">
+                    <input ngModel class="input" name="client_name" id="delivery_name" type="text" placeholder="Client Name" required>
+                    <label class="label" for="client_name">Client Name</label>
+                </div>
+                <div class="box">
+                    <input ngModel class="input" name="client_email" id="client_email" type="text" placeholder="Client Email" required>
+                    <label class="label" for="client_email">Client Email</label>
+                </div>
+                <div class="box">
+                    <input #search class="input" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" name="client_direction" id="client_direction" type="text" required>
+                    <label class="label" for="client_direction">Client Direction</label>
+                </div>
+                <div class="box">
+                    <input ngModel class="input" name="client_phone" id="client_phone" type="text" placeholder="Client Phone" required>
+                    <label class="label" for="client_phone">Client Phone</label>
+                </div>
+                <div class="button-create">
+                    <button class="button">Create Delivery</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

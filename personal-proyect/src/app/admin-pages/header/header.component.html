@@ -1,0 +1,49 @@
+<div id="wrapper">
+    <div id="header" class="header">
+        <div class="left">
+            <div class="icon">
+                <a class="reveal_menu" (click)="reveal_menu()">
+                    <fa-icon class="menu-icon" [icon]="faBars"></fa-icon>
+                </a>
+            </div>
+        </div>
+        <div id="logo">
+            <img class="image-logo" src="./assets/logo.png">
+        </div>
+    </div>
+    <div id="body">
+        <div id="menu" class="menu">
+            <div id="option" class="create">
+                <div class="content">
+                    <a (click)="show_create()">
+                        <p><fa-icon [icon]="faPlusSquare"></fa-icon> Create Delivery</p>
+                    </a>
+                </div>
+            </div>
+            <div id="option" class="current">
+                <div class="content">
+                    <a (click)="show_current()">
+                        <p><fa-icon [icon]="faTruckLoading"></fa-icon> Current Deliveries</p>
+                    </a>
+                </div>
+            </div>
+            <div id="option" class="delivered">
+                <div class="content">
+                    <a (click)="show_done()">
+                        <p><fa-icon [icon]="faPeopleCarry"></fa-icon> Items Delivered</p>
+                    </a>
+                </div>
+            </div>
+            <div class="logout">
+                <div class="content">
+                    <a (click)="logOut()">
+                        <p><fa-icon [icon]="faSignOutAlt"></fa-icon> LogOut</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <app-create-delivery *ngIf="this.getRouter().url == '/admin/create'"></app-create-delivery>
+        <app-current-deliveries *ngIf="this.getRouter().url == '/admin/current'"></app-current-deliveries>
+        <app-done-deliveries *ngIf="this.getRouter().url == '/admin/done'"></app-done-deliveries>
+    </div>
+</div>
